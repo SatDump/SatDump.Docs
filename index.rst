@@ -28,8 +28,13 @@ Features
 * Ingestor for automated geostationary weather satellites reception.
 
 .. toctree::
-   :maxdepth: 2
    :caption: Contents:
+   
+   install
+   offline_decode
+
+.. toctree::
+   :caption: Contents2:
    
    install
    offline_decode
