@@ -8,8 +8,8 @@
 
 project = 'SatDump'
 copyright = '2023, SatDump Devs'
-author = 'SatDump Devs'
-release = '1.1.1'
+author = 'SatDump'
+release = ''
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
