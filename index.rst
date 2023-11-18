@@ -31,6 +31,7 @@ Features
    :caption: Documentation
 
    pipelines
+   plugins
    sdr_options
    sat_tracker
    composites
