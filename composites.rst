@@ -247,10 +247,10 @@ convenience :)
    of 2!)
 -  ``height``: the Contents longitude of the center point).
    -  ``stereo`` requires ``lat``, ``lon`` and ``scale`` (latitude,
-      longitude of the center point, and zoom level (where 0.1 is a lot
-      of zoom and 2 isn’t). A value of 1 is good usually).
-   -  ``tpers`` requires ``alt``, ``lat``, ``lon``, ``ang``, ``azi``
-      (Altitude, Latitude, Longitude, Angle of observation, Azimuth).
+   longitude of the center point, and zoom level (where 0.1 is a lot
+   of zoom and 2 isn’t). A value of 1 is good usually).
+   -  ``tpers`` requires ``alt``, ``lat``, ``lon``, ``ang``, ``azi`` 
+   (Altitude, Latitude, Longitude, Angle of observation, Azimuth).
 
 Custom LUTs
 -----------
