@@ -3,7 +3,7 @@ Satellite Tracker
 
 The tracking widget can be used to automate reception of satellites.
 
-There three supported configurations with the tracker:
+There are three supported configurations with the tracker:
 
 #. **Manual (stand-alone)**: manually select a satellite and view information about it.
 #. **Semi-automatic**: manually select a satellite and start the tracking, then automatically control an antenna rotator during that specific satellite pass.
@@ -129,7 +129,6 @@ Rotator UI
 
    *  ``Port``: Defines the TCP port where is listening the daemon server. ``4533``
    is Rotctld’s default port, while ``4002`` is the default for PstRotator.
-
    *  ``Connect/Disconnect``. This button connects and disconnects from the
    daemon server controller.
 *  ``Schedule and Config`` opens a window containing the ``Scheduling`` tab and a ``Rotator Config`` tab.
