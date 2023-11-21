@@ -36,5 +36,6 @@ Features
    sat_tracker
    composites
    product_spec
+   faq_troubleshooting
    build_windows
    
