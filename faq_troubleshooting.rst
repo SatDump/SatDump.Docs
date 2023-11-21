@@ -79,7 +79,7 @@ some reason. SatDump will still work as expected, but at a fraction of the speed
 * **Linux - AMD Graphics:** Follow the instructions `at this site <https://math.dartmouth.edu/~sarunas/amdgpu-opencl.html>`__ to install OpenCL drivers. It is *not recommended* that
   you install the full AMD Pro drivers.
 * **Linux - NVidia Graphics:** Install the proprietary NVidia drivers on your system and reboot. You may need to add your user to the ``video`` group and reboot before OpenCL works.
-* **Linux - Intel CPU:** Install the ``intel-oneapi-runtime-opencl`` (or equivalent) package to enable OpenGL on CPU.
+* **Linux - Intel CPU:** Install the ``intel-oneapi-runtime-opencl`` (or equivalent) package to enable OpenCL on CPU.
 * **macOS:** OpenCL should be supported on all Macs as of this writing. If you esperience any issues, try building SatDump from source or
   `create an issue on GitHub <https://github.com/SatDump/SatDump/issues>`__.
 * **Android and SBCs like the Raspberry Pi:** OpenCL is not supported on these devices at this time.
