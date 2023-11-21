@@ -150,7 +150,7 @@ SatDump's logs are named satdump-\<timestamp\>.log. Logs older than 3 days old a
 type and Operating system.
 
 * **Windows (Installed):** ``%AppData%\satdump``
-* **Windows (Portable):** ``\<SatDump program folder\>\config``
+* **Windows (Portable):** ``<SatDump program folder>\config``
 * **Linux and macOS** ``~/.config/satdump``
 
 Other Problems
