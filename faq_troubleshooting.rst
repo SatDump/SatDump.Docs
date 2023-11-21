@@ -37,7 +37,6 @@ opengl32.dll from `https://fdossena.com/?p=mesa/index.frag <https://fdossena.com
 Afterwards, SatDump should open normally.
 
 .. note::
-
    The custom DLL uses software rendering to display SatDump. This will result in a low framerate, but the software should be useable.
 
 Linux
@@ -50,11 +49,10 @@ typically not a concern. Instead, try the following commands from a terminal to 
 * ``MESA_GL_VERSION_OVERRIDE=2.1 satdump-ui``: Forces SatDump to try using OpenGL 2.1
 * ``LIBGL_ALWAYS_SOFTWARE=1 satdump-ui``: Forces SatDump to use software-only rendering
 
-**Building for OpenGL ES 2.0: ** Some systems, especially embedded systems or SBCs like the BananaPi and OrangePi, do not support OpenGL. Instead, they support OpenGL ES 2.0.
+**Building for OpenGL ES 2.0:** Some systems, especially embedded systems or SBCs like the BananaPi and OrangePi, do not support OpenGL. Instead, they support OpenGL ES 2.0.
 SatDump supports OpenGL ES 2.0, but you must build it specifically for these systems. Add ``-DBUILD_GLES=ON`` to your SatDump cmake command to enable support.
 
 .. note::
-
    All modern distros for the Raspberry Pi Support Desktop OpenGL 2.1 or higher, so building for GL ES on these systems is not required.
 
 macOS
@@ -78,7 +76,7 @@ some reason. SatDump will still work as expected, but at a fraction of the speed
 * **Windows - Intel CPU:** If GPU-based OpenCL is not working for you, you can try installing the CPU-based OpenCL runtime for Intel processors from
   `Intel's website <https://www.intel.com/content/www/us/en/developer/articles/technical/intel-cpu-runtime-for-opencl-applications-with-sycl-support.html>`__.
 * **Linux - Intel Integrated Graphics:** Install the ``intel-opencl-icd`` (or equivalent) package from your distro's package manager.
-* **Linux - AMD Graphics:** Follow the instructions `at this site <https://math.dartmouth.edu/~sarunas/amdgpu-opencl.html>` to install OpenCL drivers. It is *not recommended* that
+* **Linux - AMD Graphics:** Follow the instructions `at this site <https://math.dartmouth.edu/~sarunas/amdgpu-opencl.html>`__ to install OpenCL drivers. It is *not recommended* that
   you install the full AMD Pro drivers.
 * **Linux - NVidia Graphics:** Install the proprietary NVidia drivers on your system and reboot. You may need to add your user to the ``video`` group and reboot before OpenCL works.
 * **Linux - Intel CPU:** Install the ``intel-oneapi-runtime-opencl`` (or equivalent) package to enable OpenGL on CPU.
@@ -117,7 +115,7 @@ Here's a list of drivers for popular SDRs:
 * **RTL-SDR (including NooElec, etc), AirSpy, AirSpy HF, and HackRF:** WinUSB, installed automatically or via `Zadig <https://zadig.akeo.ie/>`__
 * **Miri SDRs (often sold as RSP1 "clones"):** libusb-win32, installed via `Zadig <https://zadig.akeo.ie/>`__. You may need to uninstall/reinstall the driver a few times
   for it to work correctly. Make sure the SDRPlay API is not installed or running when using this driver!
-* **SDRPlay SDRs (RSP1a, RSPDuo, RSPdx):** Use the official SDRPlay API from the `SDRPlay website <https://www.sdrplay.com/api/>`.
+* **SDRPlay SDRs (RSP1a, RSPDuo, RSPdx):** Use the official SDRPlay API from the `SDRPlay website <https://www.sdrplay.com/api/>`__.
 
 On Linux, SatDump cannot see or open my SDR
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -127,10 +125,11 @@ modules or set up udev rules.
 
 * **RTL-SDR:** Ensure the RTL-SDR udev rules are set up under ``/lib/udev/rules.d/``. On some systems, you may need to add your user to the `plugdev` group
 * **MiriSDR:** You may need to blacklist some kernel modules. Edit ``/etc/modprobe.d`` and add the following lines:
-  ```
-  blacklist msi001
-  blacklist msi2500
-  ```
+
+.. code-block::
+
+   blacklist msi001
+   blacklist msi2500
 
 I cannot access my SDR on SatDump for Android
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
