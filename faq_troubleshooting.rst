@@ -24,7 +24,7 @@ are presented with a black screen.
 |image1|
 
 **Solutions:** This happens when your graphics card does not properly support OpenGL 2.1 or higher. Don't worry - there are a number of workarounds you can try,
-depeding on your Operating System.
+depending on your Operating System.
 
 Windows
 ^^^^^^^
@@ -37,7 +37,7 @@ opengl32.dll from `https://fdossena.com/?p=mesa/index.frag <https://fdossena.com
 Afterwards, SatDump should open normally.
 
 .. note::
-   The custom DLL uses software rendering to display SatDump. This will result in a low framerate, but the software should be useable.
+   The custom DLL uses software rendering to display SatDump. This will result in a low framerate, but the software should be usable.
 
 Linux
 ^^^^^
@@ -80,7 +80,7 @@ some reason. SatDump will still work as expected, but at a fraction of the speed
   you install the full AMD Pro drivers.
 * **Linux - NVidia Graphics:** Install the proprietary NVidia drivers on your system and reboot. You may need to add your user to the ``video`` group and reboot before OpenCL works.
 * **Linux - Intel CPU:** Install the ``intel-oneapi-runtime-opencl`` (or equivalent) package to enable OpenCL on CPU.
-* **macOS:** OpenCL should be supported on all Macs as of this writing. If you esperience any issues, try building SatDump from source or
+* **macOS:** OpenCL should be supported on all Macs as of this writing. If you experience any issues, try building SatDump from source or
   `create an issue on GitHub <https://github.com/SatDump/SatDump/issues>`__.
 * **Android and SBCs like the Raspberry Pi:** OpenCL is not supported on these devices at this time.
 
@@ -123,11 +123,12 @@ On Linux, SatDump cannot see or open my SDR
 On Linux, the correct libraries to access your SDR should already be installed by the build/installation process. However, for some SDRs, you may need to blacklist kernel
 modules or set up udev rules.
 
-* **RTL-SDR:** Ensure the RTL-SDR udev rules are set up under ``/lib/udev/rules.d/``. On some systems, you may need to add your user to the `plugdev` group
-* **MiriSDR:** You may need to blacklist some kernel modules. Edit ``/etc/modprobe.d`` and add the following lines:
+* **RTL-SDR:** Ensure the RTL-SDR udev rules are set up under ``/lib/udev/rules.d/``. On some systems, you may need to add your user to the ``plugdev`` group and restart.
+* **MiriSDR:** You may need to blacklist some kernel modules. Edit ``/etc/modprobe.d/blacklist.conf`` and add the following lines:
 
 .. code-block::
 
+   blacklist sdr_msi3101
    blacklist msi001
    blacklist msi2500
 
@@ -146,12 +147,13 @@ Then, go to the Recorder screen, and tap "refresh" for your SDR to show up.
 Where are SatDump logs?
 -----------------------
 
-SatDump's logs are named satdump-\<timestamp\>.log. Logs older than 3 days old are automatically deleted. They can be found at diffent locations, depending on your install
+SatDump's logs are named satdump-\<timestamp\>.log. Logs older than 3 days old are automatically deleted. They can be found at different locations, depending on your install
 type and Operating system.
 
 * **Windows (Installed):** ``%AppData%\satdump``
 * **Windows (Portable):** ``<SatDump program folder>\config``
 * **Linux and macOS** ``~/.config/satdump``
+* **Android:** ``adb logcat -s SatDump``
 
 Other Problems
 --------------
