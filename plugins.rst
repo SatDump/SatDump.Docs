@@ -116,3 +116,8 @@ downlinks. This is currently not updated as SpaceX has made the decision
 to encrypt the telemetry since then, but the code is kept to allow
 processing older data and in the eventuallity encryption is turned off
 in the future.
+
+Scripting (PLUGIN_SCRIPTING)
+----------------------------
+
+This allows Lua :doc:`scripting`, for example to archive data when the processing is finished.
