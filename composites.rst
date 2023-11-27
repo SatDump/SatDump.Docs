@@ -279,12 +279,5 @@ size.
 
 |Color NO|
 
-.. raw:: html
-
-   <hr />
-
-If you need help, feel free to hit me up on SatDump’s
-`Matrix <https://matrix.to/#/#satdump:altillimity.com>`__!
-
 .. |BD monochrome| image:: images/WXtoImg-BD.png
 .. |Color NO| image:: images/WXtoImg-NO_mod_meteor.png

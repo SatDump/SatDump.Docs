@@ -38,4 +38,5 @@ Features
    product_spec
    faq_troubleshooting
    build_windows
+   scripting
    
