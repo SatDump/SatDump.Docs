@@ -281,3 +281,50 @@ size.
 
 .. |BD monochrome| image:: images/WXtoImg-BD.png
 .. |Color NO| image:: images/WXtoImg-NO_mod_meteor.png
+
+Examples
+--------
+
+Overriding the default configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Thanks to the user-specific ``settings.json`` it is possible to override the default configuration via the ``viewer`` array.
+
+Here is an example that overrides some MSU-MR composites and adds new ones.
+
+.. code-block:: json
+
+   //to be put after the satdump_general array
+   "viewer": {
+      "instruments": {
+         "msu_mr": {
+            "221": {
+               //Since 221 is already present in the main satdump_cfg.json, no need to specify the equation again, just what you want to override
+               "autogen": true,
+               "equalize": true,
+               "white_balance": true
+            },
+            "421": {
+               //421 is a new composite, so it has to be specified entirely.
+               "equation": "ch4, ch2, ch1",
+               "autogen": true,
+               "geo_correct": true,
+               "equalize": true
+            }
+         }
+      }
+   }
+
+
+
+.. note::
+   If you just want to enable autogeneration of some products that have ``"autogen": false`` set in their options, just add this and put it in the section for the instrument name as shown above:
+
+   .. code-block:: json
+      
+      "composite_name": {
+         "autogen": true
+      }
+      
+
+
