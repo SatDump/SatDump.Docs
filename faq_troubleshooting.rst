@@ -87,13 +87,13 @@ some reason. SatDump will still work as expected, but at a fraction of the speed
 Projection or map overlays are missing/incorrect
 ------------------------------------------------
 
-**Problem:** When attempting to use the map overlay or projection features in SatDump, their either don't work at all, or the map/image is in the wrong place.
+**Problem:** When attempting to use the map overlay or projection features in SatDump, they either don't work at all, or the map/image is in the wrong place.
 
 |image3|
 
 **Solutions:** Projections/overlays can be incorrect for a number of reasons:
 
-* **Your TLEs are out-of-date/missing:** got to SatDump Settings > General SatDump > Update TLEs now to update your TLEs, then re-decode the data.
+* **Your TLEs are out-of-date/missing:** go to SatDump Settings > General SatDump > Update TLEs now to update your TLEs, then re-decode the data.
   |image4|
 
 * **You did not set the start time of the pass:** NOAA APT requires a valid start timestamp in order to project imagery. Meteor HRPT also requires a rough estimate of the
