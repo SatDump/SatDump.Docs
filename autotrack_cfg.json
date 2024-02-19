@@ -1,0 +1,99 @@
+{
+    // This is the general parameters block, holding SDR configuration options and a few others
+    "parameters": {
+        // SDR Options
+        "source": "rtlsdr", // The type of SDR Device you wish to use. See SDR Options for more info
+        "samplerate": 2.4e6, // The samplerate of the SDR device in use
+        "initial_frequency": 137.5e6, // The initial frequency the SDR device will be tuned at. If in Multi-Mode, that's also where it will be staying forever
+        "gain": 49, // Other SDR options (see SDR Options), such as gain
+        // FFT Options
+        "fft_enable": true, // Whether the FFT in the WebUI should be enabled or not - enabling can lead to higher CPU usage, but it will be disabled dynamically if unused
+        "fft_size": 65536, // The size of the FFT to use - 1:1 identical to the GUI
+        "fft_rate": 30, // The rate at which to run the FFT - 1:1 identical to the GUI
+        "fft_avgn": 1 // Number of FFTs to average 
+    },
+    "finish_processing": true, // Enables post-processing of the data. Eg, decoding the .cadu or .frm down to images
+    "output_folder": "./test_auto_cli", // Output folder, where all basebands, decoded data, etc will be present
+    // QTH Configuration. In degrees and meters ASL (Above Sea Level)
+    "qth": {
+        "lat": 50, // Latitude
+        "lon": -70, // Altitude
+        "alt": 123 // Altitude
+    },
+    // If present, enables the integrated HTTP server with a Web interface showing various information
+    // as well as an API (JSON) server to pull information about the autotrack status.
+    "http_server": "0.0.0.0:8081",
+    // Tracking configuration. This covers the "Satellite Tracker" part
+    "tracking": {
+        // Rotator configuration. This can be ommited if not required
+        "rotator_config": {
+            // For now, only Hamlib's Rotctl is supported
+            "rotctl": {
+                "address": "127.0.0.1", // Address of the rotctld server to connect to
+                "port": 4533 // Port of the server to connect to
+            }
+        },
+        // Configuration of the rotator tracking. This can be ommited if not required
+        "rotator_algo": {
+            // This section is also optional, and sets the rotator to
+            // park itself to a specific position when no satellites are in sight,
+            // for example setting a prime-focus dish to Zenith in order to
+            // reduce wind load
+            "park_while_idle": true, // Enables this feature
+            "park_position": {
+                "az": 0.0, // Azimuth to set the rotator to when IDLE
+                "el": 90.0 // Elevation to set the rotator to when IDLE
+            },
+            "unpark_at_minus": 60.0, // How manys seconds before a pass the rotator should un-park at prior to a pass
+            // Other general parameters
+            "update_period": 0.1 // How often the rotator position should be updated, in seconds
+        },
+        // Configuration of the scheduler
+        "autotrack_cfg": {
+            "autotrack_min_elevation": 0, // Minimum elevation (at TCA!) of passes to select, for all satellites.
+            "stop_sdr_when_idle": false, // Whether to stop the SDR when no satellites are in sight
+            "multi_mode": true // Puts the scheduler in "Multi" mode - meant for omnidirectional setups
+        }
+    },
+    // This is the list and configuration of objects autotrack should be following.
+    // Do note everything except *norad* and for *downlinks*, *frequency*, *record* 
+    // and *live* is fully optional.
+    "tracked_objects": [
+        {
+            "norad": 25338, // NORAD ID of the satellite to track
+            // Enumeration of downlinks to record. Usually one, but can be more than one
+            "downlinks": [
+                {
+                    "frequency": 137620000, // Frequency of the downlink, in Hz
+                    "record": false, // Whether to record baseband or not
+                    "live": true, // Enables live-processing with a SatDump pipeline
+                    "pipeline_name": "noaa_apt", // ID of the pipeline, to be found in the "pipelines/*.json" files
+                    // Parameters fo the pipeline, which vary depending on the pipeline
+                    "pipeline_params": {
+                        "autocrop_wedges": false,
+                        "satellite_number": "15",
+                        "sdrpp_noise_reduction": true
+                    }
+                },
+                {
+                    "frequency": 137350000,
+                    "record": false,
+                    "live": true,
+                    "pipeline_name": "noaa_dsb",
+                    "pipeline_params": {} // Many pipelines will not require any parameters, this can be left empty safely
+                }
+            ]
+        },
+        {
+            "norad": 58023,
+            "downlinks": [
+                {
+                    "frequency": 137.77e6, // You can also use exponent notation!
+                    "record": true,
+                    "baseband_format": "ziq2", // Baseband format to record in
+                    "baseband_decimation": 6 // Decimation to be applied to the recording, this effectively divides the samplerate of the SDR
+                }
+            ]
+        }
+    ]
+}

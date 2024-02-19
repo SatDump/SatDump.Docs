@@ -39,4 +39,4 @@ Features
    faq_troubleshooting
    build_windows
    scripting
-   
+   autotrack
