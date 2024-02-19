@@ -46,13 +46,13 @@ to be set by the user to match what the hardware is capable of handling within t
 *Note : It is planned to automate this process further later as to not make these assumptions and cover more usecases*
 
 CLI Configuration
-^^^^^^^^^^^^^^^^^
+-------------
 
 .. literalinclude:: autotrack_cfg.json
   :language: JSON
 
 GUI Configuration
-^^^^^^^^^^^^^^^^^
+-------------
 
 Most of the GUI configuration is covered in the *Satellite Tracker* section of this documentation. Please refer to it for rotator configuration, setting your QTH and similar.  
 
