@@ -43,6 +43,8 @@ HackRF
 -  ``lna_gain`` : LNA Gain in dBs
 -  ``vga_gain`` : VGA Gain in dBs
 -  ``bias`` : Enable Bias-Tee power
+-  ``manual_bw`` : Enable manual bandwidth filter
+-  ``manual_bw_value`` : The bandwidth filter width in Hz
 
 BladeRF
 -------
@@ -57,11 +59,15 @@ BladeRF
 
 -  ``gain`` : General Gain in dBs
 -  ``bias`` : Bias-Tee power (BladeRF 2.0 only)
+-  ``manual_bw`` : Enable manual bandwidth filter
+-  ``manual_bw_value`` : The bandwidth filter width in Hz
 
 LimeSDR
 -------
 
 -  ``gain`` : Gain in dBs
+-  ``manual_bw`` : Enable manual bandwidth filter
+-  ``manual_bw_value`` : The bandwidth filter width in Hz
 
 RTL-SDR
 -------
@@ -176,3 +182,13 @@ MiriSDR
 
 -  ``gain`` : Device Gain in dBs
 -  ``bias`` : Enable Bias-Tee power
+
+File
+----
+
+.. note::
+   It is not recommended to use the file source for live/autotrack - use offline decoding instead - but it may be useful for testing purposes.
+
+-  ``file_path`` : Path to the baseband file (can be ``/dev/stdin`` on Linux/macOS)
+-  ``baseband_type`` : baseband type - can be u8, s8, s16, f32, or ziq
+-  ``iq_swap`` : Swaps I/Q samples

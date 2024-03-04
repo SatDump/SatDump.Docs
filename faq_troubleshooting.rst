@@ -82,7 +82,9 @@ some reason. SatDump will still work as expected, but at a fraction of the speed
 * **Linux - Intel CPU:** Install the ``intel-oneapi-runtime-opencl`` (or equivalent) package to enable OpenCL on CPU.
 * **macOS:** OpenCL should be supported on all Macs as of this writing. If you experience any issues, try building SatDump from source or
   `create an issue on GitHub <https://github.com/SatDump/SatDump/issues>`__.
-* **Android and SBCs like the Raspberry Pi:** OpenCL is not supported on these devices at this time.
+* **Android:** Android does not officially support OpenCL, but it does work on all tested devices. If you have an Android device that does not support OpenCL,
+  `create an issue on GitHub <https://github.com/SatDump/SatDump/issues>`__.
+* **SBCs like the Raspberry Pi:** OpenCL is not supported on SBCs at this time.
 
 Projection or map overlays are missing/incorrect
 ------------------------------------------------

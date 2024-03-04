@@ -8,8 +8,9 @@ Visual Studio, update ``windows\Build.ps1`` as necessary.
 
 Compilation is currently only available for 64-bit Windows.
 
-**On install, set Visual Studio up for use with:** - Desktop development
-with C++ - Under “Individual components”, install “Git for Windows” as
+**On install, set Visual Studio up for use with:**
+- Desktop development with C++
+- Under “Individual components”, install “Git for Windows” as
 well.
 
 .. figure:: https://github.com/JVital2013/goestools-win/assets/24253715/396cc01e-f35d-46ca-b2b4-e240170068de

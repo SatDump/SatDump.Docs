@@ -25,9 +25,14 @@ NOAA
       your .wav file is a supported format it will be read
       automatically. Unix timestamp of the start of the file. Must be
       UTC Unix timestamp in seconds.
+   - ``sdrpp_noise_reduction``: Uses the APT noise reduction originally
+     implemented in SDR++. Default: True
+   - ``save_unsynced``: Saves the image before it's syncronized. Useful for
+     weak signals. Default: True
    -  ``autocrop_wedges``: This will automatically crop the image to
       only include telemetry wedges considered valid. May discard a lot
-      on bad images!
+      on bad images! Default: False
+   - ``save_wav``: Saves the wav file. Default: False
 
 Meteor M
 --------
@@ -39,8 +44,12 @@ Meteor M
       you are not processing your file on the same Mocow day.
 
 -  ``meteor_m2_lrpt``: METEOR M2 LRPT 72k
--  ``meteor_m2-x_lrpt``: METEOR M2-X LRPT 72k
--  ``meteor_m2-x_lrpt_80k``: METEOR M2-x LRPT 80k
+
+   -  ``fill_missing``: Fills in black lines caused by signal drop-outs or interference
+   -  ``max_fill_lines``:  Maximum contiguous lines to correct. Default is 50
+
+-  ``meteor_m2-x_lrpt``: METEOR M2-X LRPT 72k (Same parameters as meteor_m2_lrpt)
+-  ``meteor_m2-x_lrpt_80k``: METEOR M2-x LRPT 80k (Same parameters as meteor_m2_lrpt)
 -  ``meteor_m_dump_narrow``: METEOR-M Narrow Dump (WIP!)
 -  ``meteor_m_dump_wide``: METEOR-M Wide Dump (WIP!)
 
@@ -204,8 +213,12 @@ GOES
 -  ``goes_gvar``: GOES GVAR
 -  ``goes_hrit``: GOES-R HRIT
 
-   -  ``write_dcs``: Save DCS LRIT files
-   -  ``write_lrit``: Write all LRIT files
+   -  ``write_images``: Saves FD, Meso, etc images (Default: True)
+   -  ``write_emwin``: Save EMWIN Data (Default: True)
+   -  ``write_messages``: Save Admin Messages (Default: True)
+   -  ``write_unknown``: Save Unknown LRIT data(Default: True)
+   -  ``write_dcs``: Save DCS LRIT files (Default: False)
+   -  ``write_lrit``: Write all LRIT files (Default: False)
 
 -  ``goes_hrit_tcp``: GOES-R HRIT to goestools
 -  ``goes_grb``: GOES-R GRB
