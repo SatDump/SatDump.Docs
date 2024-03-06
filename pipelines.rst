@@ -32,6 +32,9 @@ NOAA
    -  ``autocrop_wedges``: This will automatically crop the image to
       only include telemetry wedges considered valid. May discard a lot
       on bad images! Default: False
+   -  ``max_crop_stddev``: If autocropping, the amount of noise to allow at
+      the top/bottom of the image. Lower values = more cropping. Default:
+      3500. Useful range is about 400 - 10,000
    - ``save_wav``: Saves the wav file. Default: False
 
 Meteor M
