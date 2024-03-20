@@ -44,14 +44,19 @@ Meteor M
 
    -  ``start_timestamp``: Unix timestamp of the start of the file
       provided. Must be UTC Unix timestamp in seconds.Required in case
-      you are not processing your file on the same Mocow day.
+      you are not processing your file on the same Moscow day.
 
 -  ``meteor_m2_lrpt``: METEOR M2 LRPT 72k
 
    -  ``fill_missing``: Fills in black lines caused by signal drop-outs or interference
    -  ``max_fill_lines``:  Maximum contiguous lines to correct. Default is 50
 
--  ``meteor_m2-x_lrpt``: METEOR M2-X LRPT 72k (Same parameters as meteor_m2_lrpt)
+-  ``meteor_m2-x_lrpt``: METEOR M2-X LRPT 72k: Same parameters as meteor_m2_lrpt, plus
+
+   - ``rs_usecheck``: Discards data that fails the Reed-Solomon check. True by default,
+     and it is recommended you leave it on - but you can set it to "false" if the
+     satellite is transmitting bad RS codes, which may happen from time to time.
+
 -  ``meteor_m2-x_lrpt_80k``: METEOR M2-x LRPT 80k (Same parameters as meteor_m2_lrpt)
 -  ``meteor_m_dump_narrow``: METEOR-M Narrow Dump (WIP!)
 -  ``meteor_m_dump_wide``: METEOR-M Wide Dump (WIP!)
