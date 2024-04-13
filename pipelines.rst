@@ -25,6 +25,9 @@ NOAA
       your .wav file is a supported format it will be read
       automatically. Unix timestamp of the start of the file. Must be
       UTC Unix timestamp in seconds.
+   -  ``align_timestamps``: Aligns pass to the correct time using timing
+      marks in the APT space data. Start time must still be within 15 seconds
+      for this to work! Default: true
    - ``sdrpp_noise_reduction``: Uses the APT noise reduction originally
      implemented in SDR++. Default: True
    - ``save_unsynced``: Saves the image before it's syncronized. Useful for
