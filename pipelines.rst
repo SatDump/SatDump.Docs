@@ -230,6 +230,8 @@ GOES
    -  ``write_unknown``: Save Unknown LRIT data(Default: True)
    -  ``write_dcs``: Save DCS LRIT files (Default: False)
    -  ``write_lrit``: Write all LRIT files (Default: False)
+   -  ``fill_missing``: Corrects black lines caused by interference or signal drop-outs (Default: False)
+   -  ``max_fill_lines``: If ``fill_missing`` is enabled, sets the maximum number of lines that can be filled in (Default: 50)
 
 -  ``goes_hrit_tcp``: GOES-R HRIT to goestools
 -  ``goes_grb``: GOES-R GRB
