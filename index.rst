@@ -40,3 +40,9 @@ Features
    build_windows
    scripting
    autotrack
+
+.. toctree::
+   :caption: SatDump Links
+
+   Website <https://www.satdump.org/>
+   Download <https://www.satdump.org/download/>
