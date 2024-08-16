@@ -6,16 +6,18 @@ Visual Studio 2022**. Building SatDump on Windows requires Microsoft
 Visual Studio 2019 or greater. If you are using another version of
 Visual Studio, update ``windows\Build.ps1`` as necessary.
 
-Compilation is currently only available for 64-bit Windows.
-
 **On install, set Visual Studio up for use with:**
-- Desktop development with C++
-- Under “Individual components”, install “Git for Windows” as
-well.
+
+* Desktop development with C++
+* Python Development Support (for building dependencies)
 
 .. figure:: https://github.com/JVital2013/goestools-win/assets/24253715/396cc01e-f35d-46ca-b2b4-e240170068de
-   
 
+* Within Visual Studio, go to Tools > Python > Python Environments. Change the "Overview" dropdown to "Packages (PyPI)"
+  and install mako (for building dependencies)
+
+.. figure:: https://github.com/user-attachments/assets/b94aac7e-7279-4d3a-a88c-56131fc707d4
+   
 Automated PowerShell Build Instructions
 ---------------------------------------
 
@@ -35,10 +37,10 @@ SatDump on Windows.
    powershell
    git clone https://github.com/SatDump/SatDump
    cd SatDump
-   .\windows\Configure-vcpkg.ps1 # Downloads a preconfigured vcpkg to the correct
-                                 # location and adds SDRPlay libraries. 
-   .\windows\Build-SatDump.ps1      # Builds SatDump 
-   .\windows\Finish-Release.ps1     # Copies all necessary files into the Release folder
+   .\windows\Configure-vcpkg.ps1 # Downloads vcpkg and configures it to build SatDump.
+                                 # This may take a while! 
+   .\windows\Build-SatDump.ps1   # Builds SatDump 
+   .\windows\Finish-Release.ps1  # Copies all necessary files into the Release folder
 
 Your build SatDump will be in the ``build\Release`` folder of the
 SatDump repo.
@@ -66,8 +68,8 @@ aren’t afriad to get their hands dirty!
       powershell
       git clone https://github.com/SatDump/SatDump
       cd SatDump
-      .\windows\Configure-vcpkg.ps1    # Downloads a preconfigured vcpkg to the correct
-                                       # location and adds SDRPlay libraries.
+      .\windows\Configure-vcpkg.ps1 # Downloads vcpkg and configures it to build SatDump.
+                                    # This may take a while! 
 
 4.  Keeping the developer console open in the background, open Microsoft
     Visual Studio. On the launch screen, select “Open a local folder”,
@@ -86,7 +88,7 @@ aren’t afriad to get their hands dirty!
     -  **CMake toolchain file:** set this to
        ``<full path of your satdump repo>\vcpkg\scripts\buildsystems\vcpkg.cmake``
     -  **CMake valiables and cache:** check “BUILD_MSVC”
-    -  **CMake Generator (under “show advanced setting):** set this
+    -  **CMake Generator (under “show advanced settings”):** set this
        to ``Visual Studio 17 2022 Win64``
 
 7.  Press Ctrl+S to save the CMake Settings. You will usually get an
