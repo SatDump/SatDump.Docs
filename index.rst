@@ -35,6 +35,7 @@ Features
    sdr_options
    sat_tracker
    composites
+   projections
    product_spec
    faq_troubleshooting
    build_windows

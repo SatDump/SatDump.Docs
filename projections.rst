@@ -1,12 +1,12 @@
 Projection System
-================
+=================
 
 Basic example
 -------------
 
 This is the simplest projection that will automatically create
 a GeoTIFF image (for later use in other software) of the proper size and projected
- using the equirectangular projection. It will then be explained further later.
+using the equirectangular projection. It will then be explained further later.
 
 .. code-block:: json
 
