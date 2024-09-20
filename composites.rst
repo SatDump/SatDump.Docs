@@ -233,9 +233,9 @@ a GeoTIFF image (for later use in other software) of the proper size and project
 
 .. code-block:: json
 
-"Composite Name": {
-   "equation": "ch2, ch2, ch1",
-   "project": {
+   "Composite Name": {
+      "equation": "ch2, ch2, ch1",
+      "project": {
          "draw_map_overlay": true,
          "individual_equalize": true,
          "img_format": ".tif",
@@ -245,13 +245,10 @@ a GeoTIFF image (for later use in other software) of the proper size and project
             "scalar_x": 0.016,
             "scalar_y": -0.016
          }
-   }
+      }
    }
 
--  ``width``: the width of the resulting image (Not necessarily a power
-   of 2!)
--  ``height``: the Contents longitude of the center point).
-
+For further information please read the projections page.
 
 Custom LUTs
 -----------
