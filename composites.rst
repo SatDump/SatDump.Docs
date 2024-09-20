@@ -227,30 +227,31 @@ request**, as it will result in many unnecessary files and takes quite a
 lot to process. Only add it in your ``settings.json`` for your own
 convenience :)
 
+For example, this is the simplest projection that will automatically create
+a GeoTIFF image (for later use in other software) of the proper size and projected
+ using the equirectangular projection:
+
 .. code-block:: json
 
-   "Composite Name": {
-      "equation": "cch1, cch2, cch3",
-      "project": {
-            "width": 4096,
-            "height": 2048,
-            "draw_map_overlay": true,
-            "individual_equalize": true,
-            "config": {
-               "type": "mercator"
-            }
+"Composite Name": {
+   "equation": "ch2, ch2, ch1",
+   "project": {
+         "draw_map_overlay": true,
+         "individual_equalize": true,
+         "img_format": ".tif",
+         "config": {
+            "type": "equirec",
+            "auto": true,
+            "scalar_x": 0.016,
+            "scalar_y": -0.016
          }
-      }
+   }
    }
 
 -  ``width``: the width of the resulting image (Not necessarily a power
    of 2!)
 -  ``height``: the Contents longitude of the center point).
-   -  ``stereo`` requires ``lat``, ``lon`` and ``scale`` (latitude,
-   longitude of the center point, and zoom level (where 0.1 is a lot
-   of zoom and 2 isn’t). A value of 1 is good usually).
-   -  ``tpers`` requires ``alt``, ``lat``, ``lon``, ``ang``, ``azi`` 
-   (Altitude, Latitude, Longitude, Angle of observation, Azimuth).
+
 
 Custom LUTs
 -----------
