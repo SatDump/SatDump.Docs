@@ -37,6 +37,7 @@ Features
    composites
    projections
    product_spec
+   official_products
    faq_troubleshooting
    build_windows
    scripting
