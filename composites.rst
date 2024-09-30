@@ -296,18 +296,20 @@ Here is an example that overrides some MSU-MR composites and adds new ones.
    "viewer": {
       "instruments": {
          "msu_mr": {
-            "221": {
-               //Since 221 is already present in the main satdump_cfg.json, no need to specify the equation again, just what you want to override
-               "autogen": true,
-               "equalize": true,
-               "white_balance": true
-            },
-            "421": {
-               //421 is a new composite, so it has to be specified entirely.
-               "equation": "ch4, ch2, ch1",
-               "autogen": true,
-               "geo_correct": true,
-               "equalize": true
+            "rgb_composites": {
+               "221": {
+                  //Since 221 is already present in the main satdump_cfg.json, no need to specify the equation again, just what you want to override
+                  "autogen": true,
+                  "equalize": true,
+                  "white_balance": true
+               },
+               "421": {
+                  //421 is a new composite, so it has to be specified entirely.
+                  "equation": "ch4, ch2, ch1",
+                  "autogen": true,
+                  "geo_correct": true,
+                  "equalize": true
+               }
             }
          }
       }
