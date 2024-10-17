@@ -51,6 +51,9 @@ Meteor M
 
 -  ``meteor_m2_lrpt``: METEOR M2 LRPT 72k
 
+   -  ``satellite_number``: If specified, overrides automatic satellite dection, and
+      treats the data as the specified satellite. Valid options: "M2", "M2-2", "M2-3",
+      or "M2-4".
    -  ``fill_missing``: Fills in black lines caused by signal drop-outs or interference
    -  ``max_fill_lines``:  Maximum contiguous lines to correct. Default is 50
 
