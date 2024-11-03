@@ -82,6 +82,13 @@ AIM
 
 -  ``aim_dump``: AIM dump
 
+AWS
+---
+
+-  ``aws_pfm``: AWS PFM L-Band (DB and Dump)
+
+   -  ``use_ephemeris``: Use ephemeris data from the satellite for projection
+
 BlueWalker-3
 ------------
 
@@ -129,10 +136,10 @@ Elektro / Arktika
 
 -  ``elektro_rdas``: ELEKTRO-L RDAS
 -  ``arktika_rdas``: ARKTIKA-M RDAS
--  ``elektro_lrit``: ELEKTRO_L LRIT
--  ``elektro_hrit``: ELEKTRO_L HRIT
--  ``elektro_tlm``: ELEKTRO_L TLM
--  ``arktika_tlm``: ARKTIKA-M L-Band TLM
+-  ``elektro_lrit``: ELEKTRO-L LRIT
+-  ``elektro_hrit``: ELEKTRO-L HRIT
+-  ``elektro_ggak``: ELEKTRO-L GGAK
+-  ``arktika_ggak``: ARKTIKA-M GGAK
 
 Fengyun-2
 ---------
