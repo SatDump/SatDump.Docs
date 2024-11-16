@@ -238,6 +238,9 @@ GOES
    -  ``write_emwin``: Save EMWIN Data (Default: True)
    -  ``write_messages``: Save Admin Messages (Default: True)
    -  ``write_unknown``: Save Unknown LRIT data(Default: True)
+   -  ``parse_dcs``: Parse DCS files and save as json (Default: False)
+   -  ``tracked_addresses``: When parsing DCS, only save info from the provided
+      comma-separated addresses (Default: Save all DCS Messages)
    -  ``write_dcs``: Save DCS LRIT files (Default: False)
    -  ``write_lrit``: Write all LRIT files (Default: False)
    -  ``fill_missing``: Corrects black lines caused by interference or signal drop-outs (Default: False)
