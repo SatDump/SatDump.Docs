@@ -45,9 +45,8 @@ Meteor M
 
 -  ``meteor_hrpt``: METEOR HRPT
 
-   -  ``start_timestamp``: Unix timestamp of the start of the file
-      provided. Must be UTC Unix timestamp in seconds.Required in case
-      you are not processing your file on the same Moscow day.
+   -  ``year_override``: Override of the year used for timestamps. Required when you are
+      processing your file in a different year than the data was created.
 
 -  ``meteor_m2_lrpt``: METEOR M2 LRPT 72k
 
