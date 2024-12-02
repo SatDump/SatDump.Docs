@@ -118,8 +118,7 @@ Rotator UI
 
 *  **Controller Daemon TCP/IP Settings**: allows configuration of
    the network communication settings with the controller daemon.
-   *  ``Address``: IP address of the computer where is the controller daemon
-   server running. 
+   *  ``Address``: IP address of the computer where is the controller daemon server running. 
       
       .. note::
 
@@ -128,9 +127,9 @@ Rotator UI
          if the daemon is running on a different computer.
 
    *  ``Port``: Defines the TCP port where is listening the daemon server. ``4533``
-   is Rotctld’s default port, while ``4002`` is the default for PstRotator.
+       is Rotctld’s default port, while ``4002`` is the default for PstRotator.
    *  ``Connect/Disconnect``. This button connects and disconnects from the
-   daemon server controller.
+       daemon server controller.
 *  ``Schedule and Config`` opens a window containing the ``Scheduling`` tab and a ``Rotator Config`` tab.
    |image5|
    The Rotator Config tab contains the ``Update Period`` text box. This is the refresh rate for the rotator controller expressed in

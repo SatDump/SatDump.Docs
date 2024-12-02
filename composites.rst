@@ -229,7 +229,7 @@ convenience :)
 
 For example, this is the simplest projection that will automatically create
 a GeoTIFF image (for later use in other software) of the proper size and projected
- using the equirectangular projection:
+using the equirectangular projection:
 
 .. code-block:: json
 
